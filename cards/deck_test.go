@@ -7,6 +7,10 @@ import (
 )
 
 func TestNewDeck(t *testing.T) {
+	is := assert.New(t)
 	d := newDeck()
-	assert.Len(t, d, 16)
+	is.Len(d, 16)
+	is.Equal("Ace of Spades", d[0])
+	is.Equal("Four of Clubs", d[len(d)-1])
+
 }
